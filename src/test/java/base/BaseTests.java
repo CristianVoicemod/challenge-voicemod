@@ -8,6 +8,10 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTests {
     protected WebDriver driver;
 
+    /**
+     * It initializes the FirefoxDriver
+     * geckodriver.exe (Windows) or geckodriver (Mac) must be in /resources folder
+     */
     @BeforeMethod
     public void suiteSetUp() {
         System.setProperty("webdriver.gecko.driver", "resources/geckodriver.exe");
@@ -15,6 +19,9 @@ public class BaseTests {
         driver.manage().window().maximize();
     }
 
+    /**
+     * It quits the driver
+     */
     @AfterMethod
     public void suiteTearDown() {
         driver.quit();

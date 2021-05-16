@@ -14,6 +14,9 @@ public class AppsTests extends BaseTests {
     private HomePage homePage;
     private AppsPage appsPage;
 
+    /**
+     * It checks if the Google Play button links to the correct Google PLay link
+     */
     @Test
     public void testSelectGooglePlay() {
         appsPage.selectGooglePlay();
@@ -21,6 +24,9 @@ public class AppsTests extends BaseTests {
                 "The correct URL in Google Play couldn't be reached");
     }
 
+    /**
+     * It checks if the App Store button links to the correct App Store link
+     */
     @Test
     public void testSelectAppStore() {
         appsPage.selectAppStore();
@@ -28,6 +34,10 @@ public class AppsTests extends BaseTests {
                 "The correct URL in App Store couldn't be reached");
     }
 
+    /**
+     * It navigates to the home page and set cookies to skip accepting cookies
+     * Then it clicks on Our Apps
+     */
     @BeforeMethod
     public void testSetUp() {
         driver.get("https://www.voicemod.net/");
@@ -39,6 +49,9 @@ public class AppsTests extends BaseTests {
         appsPage = homePage.goToOurApps();
     }
 
+    /**
+     * It deletes all cookies
+     */
     @AfterMethod
     public void testTearDown() {
         driver.manage().deleteAllCookies();

@@ -10,6 +10,9 @@ import static org.testng.Assert.assertTrue;
 public class AccountTests extends BaseTests {
     private AccountPage accountPage;
 
+    /**
+     * It checks if the Discord button links to Discord
+     */
     @Test
     public void testUseDiscord() {
         accountPage.useDiscord();
@@ -17,6 +20,9 @@ public class AccountTests extends BaseTests {
                 "discord.com/login couldn't be reached");
     }
 
+    /**
+     * It checks if the Twitch button links to Twitch
+     */
     @Test
     public void testUseTwitch() {
         accountPage.useTwitch();
@@ -24,6 +30,9 @@ public class AccountTests extends BaseTests {
                 "twitch.tv/login couldn't be reached");
     }
 
+    /**
+     * It navigates to the account page
+     */
     @BeforeMethod
     public void testSetUp() {
         driver.get("https://account.voicemod.net/");

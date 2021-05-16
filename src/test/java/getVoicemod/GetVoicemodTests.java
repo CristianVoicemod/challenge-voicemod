@@ -13,6 +13,9 @@ import static org.testng.Assert.assertTrue;
 public class GetVoicemodTests extends BaseTests {
     private HomePage homePage;
 
+    /**
+     * It checks if the main 'GET VOICEMOD FREE' button links to the account page
+     */
     @Test
     public void testGetVoicemodFree() {
         AccountPage accountPage = homePage.getVoicemodFree();
@@ -20,6 +23,9 @@ public class GetVoicemodTests extends BaseTests {
                 "account.voicemod.net couldn't be reached");
     }
 
+    /**
+     * It checks if the button 'GET VOICEMOD FREE' button that appears after scrolling links to the account page
+     */
     @Test
     public void testScrollGetVoicemodFree() {
         AccountPage accountPage = homePage.getVoicemodFreeSecondary();
@@ -27,6 +33,9 @@ public class GetVoicemodTests extends BaseTests {
                 "account.voicemod.net couldn't be reached");
     }
 
+    /**
+     * It navigates to the home page and set cookies to skip accepting cookies
+     */
     @BeforeMethod
     public void testSetUp() {
         driver.get("https://www.voicemod.net/");
@@ -37,6 +46,9 @@ public class GetVoicemodTests extends BaseTests {
         homePage = new HomePage(driver);
     }
 
+    /**
+     * It deletes all cookies
+     */
     @AfterMethod
     public void testTearDown() {
         driver.manage().deleteAllCookies();
