@@ -2,6 +2,7 @@ package apps;
 
 import base.BaseTests;
 import org.openqa.selenium.Cookie;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.AppsPage;
@@ -36,5 +37,10 @@ public class AppsTests extends BaseTests {
         driver.manage().addCookie(cookie);
         homePage = new HomePage(driver);
         appsPage = homePage.goToOurApps();
+    }
+
+    @AfterMethod
+    public void testTearDown() {
+        driver.manage().deleteAllCookies();
     }
 }

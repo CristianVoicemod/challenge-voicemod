@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends BasePage {
     private By getVoicemodFreeLink = By.cssSelector(".download-button a");
     private By getVoicemodFreeLinkSecondary = By.cssSelector("a[class='btn btn-primary btn-lg']");
-    private By ourAppsLink = By.id("menu-item-1140");
+    private By ourAppsLink = By.cssSelector("#menu-menu-vm li:nth-child(5) a");
 
     public HomePage(WebDriver driver) {
         super(driver);

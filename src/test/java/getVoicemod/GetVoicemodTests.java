@@ -2,6 +2,7 @@ package getVoicemod;
 
 import base.BaseTests;
 import org.openqa.selenium.Cookie;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.AccountPage;
@@ -34,5 +35,10 @@ public class GetVoicemodTests extends BaseTests {
                 .build();
         driver.manage().addCookie(cookie);
         homePage = new HomePage(driver);
+    }
+
+    @AfterMethod
+    public void testTearDown() {
+        driver.manage().deleteAllCookies();
     }
 }
