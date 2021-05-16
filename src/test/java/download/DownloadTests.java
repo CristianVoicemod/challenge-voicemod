@@ -15,7 +15,7 @@ public class DownloadTests extends BaseTests {
      */
     @Test
     public void testDownloadStarts() {
-        assertTrue(downloadPage.HasDownloadStarted(),
+        assertTrue(downloadPage.hasDownloadStarted(),
                 "Download didn't start");
     }
 

@@ -77,7 +77,7 @@ public class BasePage {
      * It clicks the END key to go to the end of the page
      */
     public void goToEndOfPage() {
-        Actions actions = new Actions(driver);
+        var actions = new Actions(driver);
         actions.sendKeys(Keys.END).perform();
     }
 }

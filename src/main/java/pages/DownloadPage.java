@@ -18,7 +18,7 @@ public class DownloadPage extends BasePage {
      * It checks whether the download has started or not
      * @return True or False
      */
-    public boolean HasDownloadStarted() {
+    public boolean hasDownloadStarted() {
         waitForElementToBeVisible(downloadSucessElement);
         return isDisplayed(downloadSucessElement);
     }
