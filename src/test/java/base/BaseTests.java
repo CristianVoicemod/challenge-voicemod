@@ -10,7 +10,6 @@ public class BaseTests {
 
     /**
      * It initializes the FirefoxDriver
-     * geckodriver.exe (Windows) or geckodriver (Mac) must be in /resources folder
      */
     @BeforeMethod
     public void suiteSetUp() {

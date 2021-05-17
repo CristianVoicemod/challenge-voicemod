@@ -2,7 +2,8 @@
 The aim of this project is answering the 'QA TEST - VOICEMOD'. It has two parts.
 * In the first part, Functional Testing, the explanation of the tests chosen is found.
 * In the second part, Automation Testing, everything related to the framework and the test automation is explained.
-* The last parts documents some insights got during the automation process and some exploratory testing.
+* The section Sonar shows the static analysis run in SonarCloud.  
+* The last part documents some insights got during the automation process and some exploratory testing.
 
 ## Functional Testing
 The first thing a user sees when (s)he enters [the Voicemod homepage](https://www.voicemod.net/) from the computers' 
@@ -44,7 +45,20 @@ the project.
 7) In the project tree, right click on src/test/java and select Run 'All Tests'.   
 
 ### Structure
+This a Maven project. It uses the Page Object Model pattern. Tests are based or TestNG.
+* The package src/main/java/pages contains the pages needed. All of them inherits from the BasePage that contains handy 
+common methods.
+* Several packages can be found in test/java. Each one represents a different context. The test classes of each context 
+can be found inside. BaseTests contains the methods for handling the driver properly during the suite setup and teardown.
+  
+## Sonar
+The results of the SonarCloud analysis can be found in the following image. The corrections I made afterwards:
+* Replace `Actions actions = new Actions(driver);` by `var Actions = new Actions(driver);`.
+* Rename `HasDownloadStarted` by `hasDownloadStarted`.
+* I didn't change anything in BaseTests but mark it in Sonar as won't fix.
+![img.png](img.png)
 
 ## Insights
+
 
 
