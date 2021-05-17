@@ -61,7 +61,7 @@ The results of the SonarCloud analysis can be found in the following image. The 
 ## Insights
 You can find in here some comments that may be useful.
 ### Automated tests
-Sometimes, the test `testDownloadStarts` fails. Regardless the download page is access directly or organically 
+Sometimes, the test `testDownloadStarts` fails. Regardless the download page is accessed directly or organically 
 (tested with email option), the download doesn't start automatically. A blink can be seen in the page, but it is not updated.
 I just saw this failing on May 17th morning.
 
