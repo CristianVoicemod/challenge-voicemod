@@ -45,7 +45,7 @@ the project.
 7) In the project tree, right click on src/test/java and select Run 'All Tests'.   
 
 ### Structure
-This a Maven project. It uses the Page Object Model pattern. Tests are based or TestNG.
+This a Maven project. It uses the Page Object Model pattern. Tests are based on TestNG.
 * The package src/main/java/pages contains the pages needed. All of them inherits from the BasePage that contains handy 
 common methods.
 * Several packages can be found in test/java. Each one represents a different context. The test classes of each context 
