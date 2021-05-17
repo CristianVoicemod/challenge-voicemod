@@ -1,5 +1,5 @@
 # challenge-voicemod
-The aim of this project is answering the 'QA TEST - VOICEMOD'. It has two parts.
+The aim of this project is answering the 'QA TEST - VOICEMOD'. It has several parts.
 * In the first part, Functional Testing, the explanation of the tests chosen is found.
 * In the second part, Automation Testing, everything related to the framework and the test automation is explained.
 * The section Sonar shows the static analysis run in SonarCloud.  
@@ -9,7 +9,7 @@ The aim of this project is answering the 'QA TEST - VOICEMOD'. It has two parts.
 The first thing a user sees when (s)he enters [the Voicemod homepage](https://www.voicemod.net/) from the computers' 
 browser is a big button that says 'GET VOICEMOD FREE'. 
 When it is clicked, what I called [the Account page](https://account.voicemod.net/) is loaded.
-From there, the user can create an account in different ways. After that (s)he will be redirected to what I called 
+From there, the user can create an account in different ways. After that, (s)he will be redirected to what I called 
 [the Download page](https://account.voicemod.net/?t=1620998025#/account-activated-success/) and the Voicemod download 
 will start.
 
@@ -59,6 +59,27 @@ The results of the SonarCloud analysis can be found in the following image. The 
 ![img.png](img.png)
 
 ## Insights
+You can find in here some comments that may be useful.
+### Automated tests
+Sometimes, the test `testDownloadStarts` fails. Regardless the download page is access directly or organically 
+(tested with email option), the download doesn't start automatically. A blink can be seen in the page, but it is not updated.
+I just saw this failing on May 17th morning.
+
+### Exploratory testing
+After doing some exploratory testing I have some concerns of behaviors that may impact the user experience:
+* When voicemod.net loads the page is in English but the cookies message is in Spanish.
+* Clicking on the button 'GET VOICEMOD FREE' loads the next page in the local language. I wonder why this same behavior
+  is not implemented for the homepage.
+* For all languages but Japanese, the button 'GET VOICEMOD FREE' that appears after scrolling is in English instead of translated.
+* In Spanish, Nuestra App in the top bar shows the content in English when clicking on it. However, it seems the expected 
+behavior as https://www.voicemod.net/es/voicemod-clips/ doesn't exist. I didn't test this for the rest of languages.
+* In Spanish, FAQ in the top bar redirects to the English version instead of to https://support.voicemod.net/hc/es.
+
+Overall it seems that the i18n should be revisited.
 
 
+If you have any questions, do not hesitate to ping me.
 
+Best,
+
+Cristian
